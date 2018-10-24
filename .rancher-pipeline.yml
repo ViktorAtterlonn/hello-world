@@ -1,7 +1,17 @@
 stages:
-- name: log
+- name: Build
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: echo "test"
+      shellScript: docker-compose build
+- name: Run
+  steps:
+  - runScriptConfig:
+      image: node:latest
+      shellScript: docker-compose up
+- name: Test
+  steps:
+  - runScriptConfig:
+      image: node:latest
+      shellScript: curl 'http://localhost:3001'
 timeout: 60
