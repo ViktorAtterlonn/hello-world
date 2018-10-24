@@ -1,0 +1,15 @@
+
+version: '3'
+
+services:
+  #
+  # API application
+  #
+  api:
+    build: .
+    
+    environment:
+      API_VERSION: "~0.1.0"
+    
+    ports:
+      - 3001
