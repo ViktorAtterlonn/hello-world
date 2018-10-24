@@ -1,17 +1,10 @@
 stages:
 - name: Build
   steps:
-  - runScriptConfig:
-      image: node:latest
-      shellScript: docker-compose build
-- name: Run
-  steps:
-  - runScriptConfig:
-      image: node:latest
-      shellScript: docker-compose up
-- name: Test
-  steps:
-  - runScriptConfig:
-      image: node:latest
-      shellScript: curl 'http://localhost:3001'
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: hello-world/app:v1
+      pushRemote: true
+      registry: registry.intain.cloud
 timeout: 60
