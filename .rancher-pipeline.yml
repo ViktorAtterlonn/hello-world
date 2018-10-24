@@ -1,10 +1,4 @@
 stages:
 - name: Build
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: hello-world/app:v1
-      pushRemote: true
-      registry: registry.intain.cloud
 timeout: 60
