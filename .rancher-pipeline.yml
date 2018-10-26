@@ -11,4 +11,8 @@ stages:
       buildContext: .
       tag: hello-world/image:v1
       registry: 127.0.0.1:34060
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
