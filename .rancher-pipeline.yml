@@ -4,4 +4,11 @@ stages:
   - runScriptConfig:
       image: node:latest
       shellScript: echo "test"
+- name: Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: hello-world/image:v1
+      registry: 127.0.0.1:34060
 timeout: 60
