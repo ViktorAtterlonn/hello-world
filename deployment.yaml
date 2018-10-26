@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: helloserver-service
+  namespace: ecommerce-api
 spec:
   selector:
     app: helloserver
