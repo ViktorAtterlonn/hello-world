@@ -3,7 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: echo "test"
+      shellScript: npm test
 - name: Build
   steps:
   - publishImageConfig:
